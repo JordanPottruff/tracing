@@ -13,6 +13,8 @@ public class FacePoint {
 
     private final Vec3 normal;
     private final Color color;
+    private final double specularRatio;
+    private final double shine;
     private final double opacity;
     private final double reflectance;
     private final Vec2 textureUV;
@@ -26,10 +28,13 @@ public class FacePoint {
      * @param reflectance the reflectance at the point.
      * @param textureUV   the uv-coordinate of the point, for texture purposes.
      */
-    public FacePoint(Vec3 normal, Color color, double opacity,
-                     double reflectance, Vec2 textureUV) {
+    public FacePoint(Vec3 normal, Color color, double specularRatio,
+                     double shine, double opacity, double reflectance,
+                     Vec2 textureUV) {
         this.normal = normal;
         this.color = color;
+        this.specularRatio = specularRatio;
+        this.shine = shine;
         this.opacity = opacity;
         this.reflectance = reflectance;
         this.textureUV = textureUV;
@@ -47,6 +52,20 @@ public class FacePoint {
      */
     public Color getColor() {
         return color;
+    }
+
+    /**
+     * Returns the ratio of reflected light to all light being reflected.
+     */
+    public double getSpecularRatio() {
+        return specularRatio;
+    }
+
+    /**
+     * Returns the shininess of the point, for specular relfections.
+     */
+    public double getShine() {
+        return shine;
     }
 
     /**
