@@ -99,4 +99,11 @@ public class Color {
     public double getBlue() {
         return rgb.z();
     }
+
+    /**
+     * Returns the RGB components as a {@link Vec3}.
+     */
+    public Vec3 getRGB() {
+        return rgb;
+    }
 }
